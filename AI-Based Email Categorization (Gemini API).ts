@@ -1,7 +1,7 @@
 import { GoogleGenAI, Type } from '@google/genai';
 import { client } from '../persistence/ElasticsearchService'; // Re-use ES client
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 const CATEGORY_LABELS = ["Interested", "Meeting Booked", "Not Interested", "Spam", "Out of Office"];
 
 // 3.1 LLM Categorization Service
