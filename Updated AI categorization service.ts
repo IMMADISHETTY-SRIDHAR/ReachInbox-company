@@ -3,7 +3,7 @@ import { client } from '../persistence/ElasticsearchService'; // Re-use ES clien
 import { triggerWebhooks } from '../integration/WebhookService'; // <-- NEW IMPORT
 import { EmailDocument } from '../types/EmailDocument'; // <-- Assuming this type is available
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 const CATEGORY_LABELS = ["Interested", "Meeting Booked", "Not Interested", "Spam", "Out of Office"];
 
 /**
