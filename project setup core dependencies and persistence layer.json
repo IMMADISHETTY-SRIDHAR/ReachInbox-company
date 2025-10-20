@@ -1,0 +1,46 @@
+{
+  "name": "reachinbox-onebox",
+  "version": "1.0.0",
+  "description": "Real-Time AI Email Onebox",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "ts-node-dev src/index.ts",
+    "build": "tsc"
+  },
+  "keywords": [ "imap", "elasticsearch", "gemini", "rag" ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.13.0",
+    "@google/genai": "^0.16.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-imap": "^0.9.6",
+    "qdrant-client": "^1.11.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.12",
+    "@types/node-imap": "^0.9.4",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  }
+}
+
+
+
+# Simplified for space, use the full version from the reference document
+version: '3.8'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.1
+    # ... other configs
+    ports:
+      - 9200:9200
+  qdrant:
+    image: qdrant/qdrant
+    # ... other configs
+    ports:
+      - 6333:6333 # REST API
